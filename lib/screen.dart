@@ -33,10 +33,6 @@ class _Game16x16State extends State<Game16x16> {
       ),
       body: Stack(
         children: [
-          const Align(
-            alignment: Alignment.topCenter,
-            child: Text("Good luck"),
-          ),
           Align(
             alignment: Alignment.center,
             child: Container(
@@ -209,7 +205,7 @@ class _Game16x16State extends State<Game16x16> {
     for (int i = 1; i < 16; i++) {
       numberList.add(i);
     }
-    // numberList.shuffle();
+    numberList.shuffle();
     numberList.add(16);
   }
 
@@ -220,13 +216,7 @@ class _Game16x16State extends State<Game16x16> {
       numberList[objectIndex] = numberList[clickIndex];
       numberList[clickIndex] = k;
       objectIndex = clickIndex;
-      if (numberList[objectIndex] == 16) {
-        ButtonStyle style = ButtonStyle(
-            backgroundColor: MaterialStateProperty.all(Colors.white));
-      } else {
-        ButtonStyle style = ButtonStyle(
-            backgroundColor: MaterialStateProperty.all(Colors.teal));
-      };
+
     };
     check();
   }
